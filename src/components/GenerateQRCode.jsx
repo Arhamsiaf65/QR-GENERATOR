@@ -30,19 +30,18 @@ function GenerateQRCode() {
         if (file) {
             const formData = new FormData();
             formData.append("file", file);
-            formData.append("upload_preset", "parking"); // Your upload preset
-            formData.append("effect", "background_removal"); // Correct effect for background removal
-
+            formData.append("upload_preset", "parking");
+            formData.append("effect", "background_removal");
             try {
                 const response = await fetch(
-                    `https://api.cloudinary.com/v1_1/dw8zsmfy3/image/upload`, // Your Cloud Name
+                    `https://api.cloudinary.com/v1_1/dw8zsmfy3/image/upload`, 
                     {
                         method: "POST",
                         body: formData,
                     }
                 );
                 const data = await response.json();
-                console.log(data.secure_url); // Log the processed image URL
+                console.log(data.secure_url); 
                 setUserInfo({ ...userInfo, imageUrl: data.secure_url });
             } catch (error) {
                 console.error("Error uploading image:", error);
@@ -59,7 +58,6 @@ function GenerateQRCode() {
 
     return (
         <div className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-blue-100 p-4 ">
-            {/* Form Section */}
             <div className="w-full md:max-w-md py-4 px-4 md:px-8 space-y-6 transform transition-all duration-300 hover:scale-105">
                 <form onSubmit={generateQRCode} className="space-y-4">
                     <h1 className="text-3xl md:text-5xl text-[#1C398E] py-6 md:py-3 font-bold text-shadow">
@@ -76,7 +74,7 @@ function GenerateQRCode() {
                             required
                         />
                         <span className="absolute inset-y-0 right-3 flex items-center text-gray-400">
-                            <User size={20} /> {/* Icon for Name */}
+                            <User size={20} /> 
                         </span>
                     </div>
                     <div className="relative">
@@ -90,7 +88,7 @@ function GenerateQRCode() {
                             required
                         />
                         <span className="absolute inset-y-0 right-3 flex items-center text-gray-400">
-                            <Phone size={20} /> {/* Icon for contact */}
+                            <Phone size={20} /> 
                         </span>
                     </div>
                     <div className="relative">
