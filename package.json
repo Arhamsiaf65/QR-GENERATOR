@@ -29,6 +29,7 @@
     "react-router-dom": "^7.2.0",
     "react-scanner": "^1.2.0",
     "react-to-print": "^3.0.5",
+    "react-toastify": "^11.0.5",
     "styled-components": "^6.1.15",
     "tailwindcss": "^4.0.6"
   },
